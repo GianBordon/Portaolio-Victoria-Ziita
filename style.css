@@ -69,7 +69,7 @@ body {
 /* Section Gallery */
 
 .gallery-container {
-  column-count: 3;
+  column-count: 2;
   column-gap: 16px;
   max-width: 900px;
   margin: 0 auto;
@@ -226,7 +226,7 @@ body {
 /* Para dispositivos móviles */
 @media (max-width: 600px) {
   .gallery-container {
-    column-count: 2; /* Una columna para que ocupe todo el ancho */
+    column-count: 1; /* Una columna para que ocupe todo el ancho */
     padding: 20px;
   }
   
