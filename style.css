@@ -1,0 +1,237 @@
+:root{
+    --color-background: #ffffff;;
+    --color-font: #000000;
+    --font-primary: 'EB Garamond', serif;
+}
+
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'EB Garamond', serif;
+  background-color: #fff;
+  font-style: italic;
+}
+
+/* Contenedor principal */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+  padding: 40px 20px 0; 
+}
+
+/* Título y subtítulo */
+.title-container {
+  margin-bottom: 20px;
+}
+
+.main-title {
+  font-size: 24px;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+/* Link del título */
+.home-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navegación */
+.navigation {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 18px;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #888;
+}
+
+.nav-link.active {
+  color: #999;             
+  text-decoration: underline;
+}
+
+/* Section Gallery */
+
+.gallery-container {
+  column-count: 3;
+  column-gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.gallery-item {
+  width: 100%;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  filter: saturate(0.95);
+  transition: transform 0.35s, box-shadow 0.35s, filter 0.35s;
+  cursor: pointer;
+}
+
+.gallery-item:hover,
+.gallery-item:focus {
+  transform: scale(1.05) translateY(-6px);
+  box-shadow:
+    0 12px 20px rgba(0, 0, 0, 0.28),
+    0 4px 8px rgba(0, 0, 0, 0.12);
+  filter: saturate(1.15) brightness(1.05);
+  outline: none;
+}
+
+
+.gallery-item:focus-visible {
+  box-shadow:
+    0 0 0 3px #7f5af0,
+    0 12px 20px rgba(0, 0, 0, 0.28);
+}
+
+
+
+/* Section sobre mi*/
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  min-height: 80vh;
+}
+
+.about-container {
+  max-width: 500px;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.about-container p {
+  margin-bottom: 24px;
+}
+
+/* Contact Section */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  padding: 40px 20px;
+}
+
+.contact-container {
+  text-align: center;
+  max-width: 400px;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.1rem;
+  line-height: 2;
+  color: #333;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Elementos individuales */
+.contact-item {
+  margin-bottom: 16px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.contact-item:hover {
+  color: #999;
+}
+
+/* Agregar íconos decorativos con pseudo-elementos */
+.contact-item::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #999;
+  border-radius: 50%;
+  margin-right: 10px;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+.contact-item:hover::before {
+  transform: scale(1);
+}
+
+.contact-item a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+}
+
+.contact-item a:hover {
+  color: #999;
+  border-bottom-color: #999;
+}
+
+
+/* Animación */
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación para fade-in y slide up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframe para crecer la imagen */
+@keyframes growOnMobile {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+
+/* Para dispositivos móviles */
+@media (max-width: 600px) {
+  .gallery-container {
+    column-count: 2; /* Una columna para que ocupe todo el ancho */
+    padding: 20px;
+  }
+  
+  .gallery-item {
+    margin-bottom: 20px;
+    /* Al estar en una columna la imagen ocupará casi todo el ancho disponible */
+  }
+}
